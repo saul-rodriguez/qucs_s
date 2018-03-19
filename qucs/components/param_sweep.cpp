@@ -105,25 +105,47 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
 
     QString s,unit;
     QString par = getProperty("Param")->Value;
+    QString type = getProperty("Type")->Value;
     QString step_var = par;
     step_var.remove(QRegExp("[\\.\\[\\]@:]"));
 
-    double start,stop,step,fac,points;
-    misc::str2num(getProperty("Start")->Value,start,unit,fac);
-    start *= fac;
-    misc::str2num(getProperty("Stop")->Value,stop,unit,fac);
-    stop *= fac;
-    misc::str2num(getProperty("Points")->Value,points,unit,fac);
-    points *= fac;
-    step = (stop-start)/points;
-    s = QString("let start_%1 = %2\n").arg(step_var).arg(start);
-    s += QString("let stop_%1 = %2\n").arg(step_var).arg(stop);
-    s += QString("let %1_act=start_%1\n").arg(step_var);
-    s += QString("let delta_%1 = %2\n").arg(step_var).arg(step);
-    s += QString("let number_%1 = 0\n").arg(step_var);
-    if (lvl==0) s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res\n").arg(sim).arg(step_var).arg(sim);
-    else s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res%4\n").arg(sim).arg(step_var).arg(sim).arg(lvl);
-    s += QString("while %1_act le stop_%1\n").arg(step_var);
+    if((type == "list") || (type == "const")) {
+        if (lvl==0) s = QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res\n").arg(sim).arg(step_var).arg(sim);
+        else s = QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res%4\n").arg(sim).arg(step_var).arg(sim).arg(lvl);
+
+        QStringList List;
+        List = getProperty("Values")->Value.split(";");
+        s += QString("compose number_%1 ").arg(step_var);
+        for(int i = 0; i < List.length(); i++){
+            List[i].remove(QRegExp("[A-Za-z]"));
+            s += QString("%1_%2 = %3 ").arg(step_var).arg(i).arg(List[i]);
+        }
+        s += "\n";
+
+
+
+    }
+    else {
+        double start,stop,step,fac,points;
+        misc::str2num(getProperty("Start")->Value,start,unit,fac);
+        start *= fac;
+        misc::str2num(getProperty("Stop")->Value,stop,unit,fac);
+        stop *= fac;
+        misc::str2num(getProperty("Points")->Value,points,unit,fac);
+        points *= fac;
+        step = (stop-start)/points;
+
+        s = QString("let start_%1 = %2\n").arg(step_var).arg(start);
+        s += QString("let stop_%1 = %2\n").arg(step_var).arg(stop);
+        s += QString("let %1_act=start_%1\n").arg(step_var);
+        s += QString("let delta_%1 = %2\n").arg(step_var).arg(step);
+        s += QString("let points = %1\n").arg(points);
+        if (lvl==0) s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res\n").arg(sim).arg(step_var).arg(sim);
+        else s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res%4\n").arg(sim).arg(step_var).arg(sim).arg(lvl);
+        s += QString("compose number_%1 start=0 stop=$&points step = 1\n").arg(step_var);
+    }
+
+    s += QString("foreach i $&number_%1\n").arg(step_var);
 
     bool modelsweep = false; // Find component and its modelstring 
     QString mod,mod_par;
@@ -159,13 +181,25 @@ QString Param_Sweep::getNgspiceAfterSim(QString sim, int lvl)
 
     QString s;
     QString par = getProperty("Param")->Value;
+    QString type = getProperty("Type")->Value;
     par.remove(QRegExp("[\\.\\[\\]@:]"));
 
     s = "set appendwrite\n";
-    if (lvl==0) s += QString("echo \"$&number_%1\" \"$&%1_act\" >> spice4qucs.%2.cir.res\n").arg(par).arg(sim);
-    else s += QString("echo \"$&number_%1\" \"$&%1_act\" >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
-    s += QString("let %1_act = %1_act + delta_%1\n").arg(par);
-    s += QString("let number_%1 = number_%1 +1\n").arg(par);
+
+    if((type == "list") || (type == "const")){
+        QStringList List;
+        List = getProperty("Values")->Value.split(";");
+
+        for (int i = 0; i < List.length(); i++)
+        if (lvl==0) s += QString("echo \"$&i\" \"$&number_%1[%2]\" >> spice4qucs.%3.cir.res\n").arg(par).arg(i).arg(sim);
+        else s += QString("echo \"$&i\" \"$&number_%1[%2]\" >> spice4qucs.%3.cir.res%4\n").arg(par).arg(i).arg(sim).arg(lvl);
+    }
+    else{
+        if (lvl==0) s += QString("echo \"$&i\" \"$&%1_act\" >> spice4qucs.%2.cir.res\n").arg(par).arg(sim);
+        else s += QString("echo \"$&i\" \"$&%1_act\" >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
+        s += QString("let %1_act = %1_act + delta_%1\n").arg(par);
+    }
+    s += QString("let i = i +1\n");
     s += "end\n";
     s += "unset appendwrite\n";
     return s;
