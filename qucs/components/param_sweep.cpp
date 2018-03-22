@@ -229,13 +229,15 @@ QString Param_Sweep::spice_netlist(bool isXyce)
             return s.toLower();
         }
     }
-    misc::str2num(getProperty("Start")->Value,start,unit,fac);
-    start *= fac;
-    misc::str2num(getProperty("Stop")->Value,stop,unit,fac);
-    stop *= fac;
-    misc::str2num(getProperty("Points")->Value,points,unit,fac);
-    points *= fac;
-    step = (stop-start)/points;
+    if(getProperty("Type")->Value!="list" && getProperty("Type")->Value!="const"){
+        misc::str2num(getProperty("Start")->Value,start,unit,fac);
+        start *= fac;
+        misc::str2num(getProperty("Stop")->Value,stop,unit,fac);
+        stop *= fac;
+        misc::str2num(getProperty("Points")->Value,points,unit,fac);
+        points *= fac;
+        step = (stop-start)/points;
+    }
 
     if (Props.at(0)->Value.startsWith("DC")) {
         QString src = getProperty("Param")->Value;
