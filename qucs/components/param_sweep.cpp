@@ -135,17 +135,18 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
         points *= fac;
         step = (stop-start)/points;
 
-        s = QString("let start_%1 = %2\n").arg(step_var).arg(start);
-        s += QString("let stop_%1 = %2\n").arg(step_var).arg(stop);
-        s += QString("let %1_act=start_%1\n").arg(step_var);
-        s += QString("let delta_%1 = %2\n").arg(step_var).arg(step);
-        s += QString("let points = %1\n").arg(points);
+        s = QString("let number_%1 = 0\n").arg(step_var);
         if (lvl==0) s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res\n").arg(sim).arg(step_var).arg(sim);
         else s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res%4\n").arg(sim).arg(step_var).arg(sim).arg(lvl);
-        s += QString("compose number_%1 start=0 stop=$&points step = 1\n").arg(step_var);
+
+        s += "foreach i ";
+        for (; start <= stop; start += step){
+            s += QString("%1 ").arg(start);
+        }
+        s += "\n";
+        qDebug() << s;
     }
 
-    s += QString("foreach i $&number_%1\n").arg(step_var);
 
     bool modelsweep = false; // Find component and its modelstring 
     QString mod,mod_par;
@@ -195,11 +196,10 @@ QString Param_Sweep::getNgspiceAfterSim(QString sim, int lvl)
         else s += QString("echo \"$&i\" \"$&number_%1[%2]\" >> spice4qucs.%3.cir.res%4\n").arg(par).arg(i).arg(sim).arg(lvl);
     }
     else{
-        if (lvl==0) s += QString("echo \"$&i\" \"$&%1_act\" >> spice4qucs.%2.cir.res\n").arg(par).arg(sim);
-        else s += QString("echo \"$&i\" \"$&%1_act\" >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
-        s += QString("let %1_act = %1_act + delta_%1\n").arg(par);
+        if (lvl==0) s += QString("echo \"$&number_%1\" $i >> spice4qucs.%2.cir.res\n").arg(par).arg(sim);
+        else s += QString("echo \"$&number_%1\" $i >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
+        s += QString("let number_%1 = number_%1 + 1\n").arg(par);
     }
-    s += QString("let i = i +1\n");
     s += "end\n";
     s += "unset appendwrite\n";
     return s;
