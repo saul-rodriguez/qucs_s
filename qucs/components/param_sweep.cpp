@@ -104,7 +104,7 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
     if (isActive != COMP_IS_ACTIVE) return QString("");
 
     QString s,unit;
-    QString par = getProperty("Param")->Value;
+    QString par = getProperty("Param")->Value.toLower();
     QString type = getProperty("Type")->Value;
     QString step_var = par;
     step_var.remove(QRegExp("[\\.\\[\\]@:]"));
@@ -113,7 +113,7 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
     if (lvl==0) s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res\n").arg(sim).arg(step_var).arg(sim);
     else s += QString("echo \"STEP %1.%2\" > spice4qucs.%3.cir.res%4\n").arg(sim).arg(step_var).arg(sim).arg(lvl);
 
-    s += "foreach i ";
+    s += QString("foreach  %1_act ").arg(step_var);
 
     if((type == "list") || (type == "const")) {
         QStringList List;
@@ -157,12 +157,12 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
     }
 
     if (modelsweep) { // Model parameter sweep
-        s += QString("altermod %1 %2 = %3_act\n").arg(mod).arg(mod_par).arg(step_var);
+        s += QString("altermod %1 %2 = $%3_act\n").arg(mod).arg(mod_par).arg(step_var);
     } else {
         QString mswp = getProperty("SweepModel")->Value;
         if (mswp == "true")
-            s += QString("altermod %1 = %2_act\n").arg(par).arg(step_var);
-        else s += QString("alter %1 = %2_act\n").arg(par).arg(step_var);
+            s += QString("altermod %1 = $%2_act\n").arg(par).arg(step_var);
+        else s += QString("alter %1 = $%2_act\n").arg(par).arg(step_var);
     }
     return s;
 }
@@ -172,13 +172,13 @@ QString Param_Sweep::getNgspiceAfterSim(QString sim, int lvl)
     if (isActive != COMP_IS_ACTIVE) return QString("");
 
     QString s;
-    QString par = getProperty("Param")->Value;
+    QString par = getProperty("Param")->Value.toLower();
     QString type = getProperty("Type")->Value;
     par.remove(QRegExp("[\\.\\[\\]@:]"));
 
     s = "set appendwrite\n";
 
-    if (lvl==0) s += QString("echo \"$&number_%1\" $i >> spice4qucs.%2.cir.res\n").arg(par).arg(sim);
+    if (lvl==0) s += QString("echo \"$&number_%1  $%2_act\">> spice4qucs.%3.cir.res\n").arg(par).arg(par).arg(sim);
     else s += QString("echo \"$&number_%1\" $i >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
     s += QString("let number_%1 = number_%1 + 1\n").arg(par);
 
