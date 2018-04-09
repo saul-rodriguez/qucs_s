@@ -142,10 +142,19 @@ QString Param_Sweep::getNgspiceBeforeSim(QString sim, int lvl)
         else{
             start = log10(start);
             stop = log10(stop);
-            step = (stop - start)/(points+1);
+            step = (stop - start)/points;
 
-            for (; start <= stop; start += step){
+            while(1){
                 s += QString("%1 ").arg(pow(10, start));
+                if(start + step <= stop){
+                    start += step;
+                }
+                else if(start == stop){
+                    break;
+                }
+                else{
+                    start = stop;
+                }
             }
         }
     }
