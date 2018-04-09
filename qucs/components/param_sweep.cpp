@@ -191,7 +191,7 @@ QString Param_Sweep::getNgspiceAfterSim(QString sim, int lvl)
     s = "set appendwrite\n";
 
     if (lvl==0) s += QString("echo \"$&number_%1  $%2_act\">> spice4qucs.%3.cir.res\n").arg(par).arg(par).arg(sim);
-    else s += QString("echo \"$&number_%1\" $i >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
+    else s += QString("echo \"$&number_%1\" $%1_act >> spice4qucs.%2.cir.res%3\n").arg(par).arg(sim).arg(lvl);
     s += QString("let number_%1 = number_%1 + 1\n").arg(par);
 
     s += "end\n";
