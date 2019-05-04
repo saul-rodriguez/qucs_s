@@ -37,10 +37,10 @@ TwistedPair::TwistedPair()
   Arcs.append(new Arc(  7,-36, 18, 38,16*242, 16*68,QPen(Qt::darkBlue,1)));
   Arcs.append(new Arc(  7, -2, 18, 38, 16*50, 16*68,QPen(Qt::darkBlue,1)));
 
-  Arcs.append(new Arc(-40,-10, 20, 33, 16*32, 16*58,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-40,-23, 20, 33,16*270, 16*58,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc( 20,-10, 20, 33, 16*90, 16*58,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc( 20,-23, 20, 33,16*212, 16*58,QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc(-40,-10, 20, 33, 16*32, 16*58,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-40,-23, 20, 33,16*270, 16*58,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc( 20,-10, 20, 33, 16*90, 16*58,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc( 20,-23, 20, 33,16*212, 16*58,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port(-30,-10));
   Ports.append(new Port( 30,-10));

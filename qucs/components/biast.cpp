@@ -30,15 +30,15 @@ BiasT::BiasT()
   Lines.append(new Line(-22, 22, 22, 22,QPen(Qt::darkBlue,1)));
   Lines.append(new Line( 22,-10, 22, 22,QPen(Qt::darkBlue,1)));
 
-  Lines.append(new Line(-13, -6,-13,  7,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -9, -6, -9,  7,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-13, -6,-13,  7,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -9, -6, -9,  7,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   Lines.append(new Line( -9,  0, 22,  0,QPen(Qt::darkBlue,1)));
   Lines.append(new Line(-22,  0,-13,  0,QPen(Qt::darkBlue,1)));
-  Lines.append(new Line(-30,  0,-22,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 22,  0, 30,  0,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,  0,-22,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 22,  0, 30,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   Lines.append(new Line(  0,  0,  0,  2,QPen(Qt::darkBlue,1)));
   Lines.append(new Line(  0, 20,  0, 22,QPen(Qt::darkBlue,1)));
-  Lines.append(new Line(  0, 22,  0, 30,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(  0, 22,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port(-30,  0));
   Ports.append(new Port( 30,  0));

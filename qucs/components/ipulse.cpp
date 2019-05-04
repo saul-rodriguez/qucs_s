@@ -27,19 +27,19 @@ iPulse::iPulse()
 {
   Description = QObject::tr("ideal current pulse source");
 
-  Arcs.append(new Arc(-12,-12, 24, 24,  0, 16*360,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,  0,-12,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,  0, 12,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -7,  0,  7,  0,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(  6,  0,  0, -4,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(  6,  0,  0,  4,QPen(Qt::darkBlue,3)));
+  Arcs.append(new Arc(-12,-12, 24, 24,  0, 16*360,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-12,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,  0, 12,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -7,  0,  7,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  6,  0,  0, -4,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  6,  0,  0,  4,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // little pulse symbol
-  Lines.append(new Line( 13,  7, 13, 10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 19, 10, 19, 14,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 13, 14, 13, 17,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 13, 10, 19, 10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 13, 14, 19, 14,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line( 13,  7, 13, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 19, 10, 19, 14,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 13, 14, 13, 17,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 13, 10, 19, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 13, 14, 19, 14,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port( 30,  0));
   Ports.append(new Port(-30,  0));

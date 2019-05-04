@@ -27,12 +27,12 @@ Coupler::Coupler()
   Lines.append(new Line( 23, 24,-23, 24,QPen(Qt::darkGray,1)));
   Lines.append(new Line(-23, 24,-23,-24,QPen(Qt::darkGray,1)));
 
-  Lines.append(new Line(-30,-20,-20,-20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,-20, 20,-20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-20,-20, 20,-20,QPen(Qt::darkBlue,4)));
-  Lines.append(new Line(-30, 20,-20, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, 20, 20, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-20, 20, 20, 20,QPen(Qt::darkBlue,4)));
+  Lines.append(new Line(-30,-20,-20,-20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,-20, 20,-20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-20,-20, 20,-20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30, 20,-20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 20, 20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-20, 20, 20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Lines.append(new Line( 14, 14,-14,-14,QPen(Qt::darkBlue,1)));
   Lines.append(new Line(-14,-14, -9,-14,QPen(Qt::darkBlue,1)));

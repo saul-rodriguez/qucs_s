@@ -28,18 +28,18 @@ vPulse::vPulse()
 {
   Description = QObject::tr("ideal voltage pulse source");
 
-  Arcs.append(new Arc(-12,-12, 24, 24,     0, 16*360,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,  0,-12,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,  0, 12,  0,QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc(-12,-12, 24, 24,     0, 16*360,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-12,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,  0, 12,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   Lines.append(new Line( 18,  5, 18, 11,QPen(Qt::red,1)));
   Lines.append(new Line( 21,  8, 15,  8,QPen(Qt::red,1)));
   Lines.append(new Line(-18,  5,-18, 11,QPen(Qt::black,1)));
 
-  Lines.append(new Line(  6, -3,  6,  3,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -6, -7, -6, -3,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -6,  3, -6,  7,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -6, -3,  6, -3,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -6,  3,  6,  3,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(  6, -3,  6,  3,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -6, -7, -6, -3,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -6,  3, -6,  7,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -6, -3,  6, -3,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -6,  3,  6,  3,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port( 30,  0));
   Ports.append(new Port(-30,  0));

@@ -222,31 +222,31 @@ Element * EKV26MOS::info_pmos(QString& Name, char * &BitmapFile, bool getNewOne)
 void EKV26MOS::createSymbol()
 {
   // put in here symbol drawing code and terminal definitions
-  Lines.append(new Line(-14,-13,-14, 13,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-30,  0,-14,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-11,  0,-11,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,-11,  0,-30,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-14,-13,-14, 13,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-14,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-11,  0,-11,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,-11,  0,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   
-  Lines.append(new Line(-10, 11,  0, 11,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 11,  0, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,  0, 20,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-16,-10, -7,QPen(Qt::darkBlue,3)));
+  Lines.append(new Line(-10, 11,  0, 11,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 11,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,  0, 20,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-16,-10, -7,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   
-  Lines.append(new Line(-10,  7,-10, 16,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line( -4, 24,  4, 20,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-10,  7,-10, 16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -4, 24,  4, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // arrow
   if(getProperty("Type")->Value == "nmos") {
-    Lines.append(new Line( -9,  0, -4, -5,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( -9,  0, -4,  5,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line( -9,  0, -4, -5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( -9,  0, -4,  5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   } else {
-    Lines.append(new Line( -5,  5,  0,   0,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( -5,  -5, 0,  0,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line( -5,  5,  0,   0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( -5,  -5, 0,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   }
   
-  Lines.append(new Line(-10, -3,-10,  3,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-10, -8,-10, -6,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-10,  8,-10,  6,QPen(Qt::darkBlue,3)));
+  Lines.append(new Line(-10, -3,-10,  3,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, -8,-10, -6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,  8,-10,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // E
   Lines.append(new Line(-30,-30,-30,-24,QPen(Qt::darkBlue,1)));

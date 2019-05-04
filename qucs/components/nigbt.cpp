@@ -96,19 +96,19 @@ Element * nigbt::info(QString& Name, char * &BitmapFile, bool getNewOne)
 void nigbt::createSymbol()
 {
   // bipolar
-  Lines.append(new Line(-10,-15,-10, 15,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-30,  0,-14,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, -5,  0,-15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,-15,  0,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,  5,  0, 15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 15,  0, 30,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-10,-15,-10, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-14,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, -5,  0,-15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,-15,  0,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,  5,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 15,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // mos gate
-  Lines.append(new Line(-14,-13,-14, 13,QPen(Qt::darkBlue,3)));
+  Lines.append(new Line(-14,-13,-14, 13,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // arrow
-  Lines.append(new Line( -6, 15,  0, 15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,  9,  0, 15,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line( -6, 15,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,  9,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   // terminal definitions
   Ports.append(new Port(  0,-30)); // collector

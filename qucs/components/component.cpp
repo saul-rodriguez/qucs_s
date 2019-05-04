@@ -205,7 +205,7 @@ void Component::paint(ViewPainter *p)
     else if ((Model==".XYCESCR")||(Model==".SENS_XYCE")
              ||(Model==".SENS_TR_XYCE")) p->Painter->setPen(QPen(Qt::darkGreen,2));
     else if (Model==".FOURIER") p->Painter->setPen(QPen(Qt::darkRed,2));
-    else p->Painter->setPen(QPen(Qt::darkBlue,2));
+    else p->Painter->setPen(QPen(gCustomPref.componentColor,gCustomPref.componentThickness));
 
     a = b = 0;
     QRect r, t;
@@ -294,13 +294,15 @@ void Component::paint(ViewPainter *p)
   // restore old font
   p->Painter->setFont(f);
 
-  p->Painter->setPen(QPen(Qt::black,1));
+  //p->Painter->setPen(QPen(Qt::black,1));
+  p->Painter->setPen(QPen(gCustomPref.componentName,1));
   p->map(cx+tx, cy+ty, x, y);
   if(showName) {
     p->Painter->drawText(x, y, 0, 0, Qt::TextDontClip, Name);
     y += p->LineSpacing;
   }
   // write all properties
+  p->Painter->setPen(QPen(gCustomPref.componentValue,1));
   for(Property *p4 = Props.first(); p4 != 0; p4 = Props.next())
     if(p4->display) {
       p->Painter->drawText(x, y, 0, 0, Qt::TextDontClip, p4->Name+"="+p4->Value);
@@ -1622,11 +1624,11 @@ void GateComponent::createSymbol()
   if(Props.getLast()->Value.at(0) == 'D') {  // DIN symbol
     xl = -15;
     xr =  15;
-    Lines.append(new Line( 15,-y, 15, y,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line(-15,-y, 15,-y,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line(-15, y, 15, y,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line(-15,-y,-15, y,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( 15, 0, 30, 0,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line( 15,-y, 15, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line(-15,-y, 15,-y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line(-15, y, 15, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line(-15,-y,-15, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( 15, 0, 30, 0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
     if(Model.at(z) == 'O') {
       Lines.append(new Line(-11, 6-y,-6, 9-y,QPen(Qt::darkBlue,0)));
@@ -1652,11 +1654,11 @@ void GateComponent::createSymbol()
     if(Model.at(z) == 'O')  xl = 10;
     else  xl = -10;
     xr = 10;
-    Lines.append(new Line(-10,-y,-10, y,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( 10, 0, 30, 0,QPen(Qt::darkBlue,2)));
-    Arcs.append(new Arc(-30,-y, 40, 30, 0, 16*90,QPen(Qt::darkBlue,2)));
-    Arcs.append(new Arc(-30,y-30, 40, 30, 0,-16*90,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( 10,15-y, 10, y-15,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line(-10,-y,-10, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( 10, 0, 30, 0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Arcs.append(new Arc(-30,-y, 40, 30, 0, 16*90,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Arcs.append(new Arc(-30,y-30, 40, 30, 0,-16*90,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( 10,15-y, 10, y-15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
     if(Model.at(0) == 'X') {
       Lines.append(new Line(-5, 0, 5, 0,QPen(Qt::darkBlue,1)));
@@ -1681,10 +1683,10 @@ void GateComponent::createSymbol()
     y -= 20;
     Ports.append(new Port(-30, y));
     if(xl == 10) if((z == 0) || (z == Num-1)) {
-      Lines.append(new Line(-30, y, 9, y,QPen(Qt::darkBlue,2)));
+      Lines.append(new Line(-30, y, 9, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
       continue;
     }
-    Lines.append(new Line(-30, y, xl, y,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line(-30, y, xl, y,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   }
 }
 

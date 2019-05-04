@@ -874,7 +874,7 @@ void Schematic::paintGrid(ViewPainter *p, int cX, int cY, int Width, int Height)
 {
   if(!GridOn) return;
 
-  p->Painter->setPen(QPen(Qt::black,0));
+  p->Painter->setPen(QPen(gCustomPref.gridColor,0));
   int dx = -int(Scale*float(ViewX1)) - cX;
   int dy = -int(Scale*float(ViewY1)) - cY;
   p->Painter->drawLine(-3+dx, dy, 4+dx, dy); // small cross at origin

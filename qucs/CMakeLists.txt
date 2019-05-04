@@ -135,7 +135,7 @@ SET(QUCS_SRCS
   mouseactions.cpp qucs_actions.cpp	schematic_file.cpp
   wirelabel.cpp node.cpp qucs_init.cpp
   syntax.cpp misc.cpp messagedock.cpp
-  imagewriter.cpp printerwriter.cpp projectView.cpp
+  imagewriter.cpp printerwriter.cpp projectView.cpp custompreferences.cpp
 )
 
 SET(QUCS_HDRS
@@ -156,6 +156,7 @@ textdoc.h
 viewpainter.h
 wire.h
 wirelabel.h
+custompreferences.h
 )
 
 #

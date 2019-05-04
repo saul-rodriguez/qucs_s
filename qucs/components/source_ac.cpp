@@ -27,17 +27,17 @@ Source_ac::Source_ac()
   Lines.append(new Line(-22,-11,-22, 11,QPen(Qt::darkGray,0)));
   Lines.append(new Line( 22,-11, 22, 11,QPen(Qt::darkGray,0)));
 
-  Arcs.append(new Arc(-19, -9, 18, 18,     0, 16*360,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-13, -6,  6,  6,16*270, 16*180,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-13,  0,  6,  6, 16*90, 16*180,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,  0,-19,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,  0, 19,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -1,  0,  3,  0,QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc(-19, -9, 18, 18,     0, 16*360,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-13, -6,  6,  6,16*270, 16*180,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-13,  0,  6,  6, 16*90, 16*180,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-19,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,  0, 19,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -1,  0,  3,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(  3, -5, 19, -5,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  3,  5, 19,  5,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  3, -5,  3,  5,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 19, -5, 19,  5,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(  3, -5, 19, -5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  3,  5, 19,  5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  3, -5,  3,  5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 19, -5, 19,  5,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Lines.append(new Line( 25,  5, 25, 11,QPen(Qt::red,1)));
   Lines.append(new Line( 28,  8, 22,  8,QPen(Qt::red,1)));

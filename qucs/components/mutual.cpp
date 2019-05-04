@@ -22,20 +22,20 @@ Mutual::Mutual()
 {
   Description = QObject::tr("two mutual inductors");
 
-  Arcs.append(new Arc(-16,-18,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16, -6,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16,  6,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4,-18,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4, -6,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4,  6,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-18,-10,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-30,-30,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10,-18, 10,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10,-30, 30,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 18,-10, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 30,-30, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10, 18, 10, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10, 30, 30, 30,QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc(-16,-18,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16, -6,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16,  6,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4,-18,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4, -6,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4,  6,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-18,-10,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-30,-30,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10,-18, 10,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10,-30, 30,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 18,-10, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 30,-30, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10, 18, 10, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10, 30, 30, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Texts.append(new Text(-21, -22, "1"));
   Texts.append(new Text( 15, -22, "2"));

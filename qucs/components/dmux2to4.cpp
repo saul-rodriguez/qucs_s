@@ -56,20 +56,20 @@ Element * dmux2to4::info(QString& Name, char * &BitmapFile, bool getNewOne)
 
 void dmux2to4::createSymbol()
 {
-  Lines.append(new Line(-30, -90, 30,-90,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, -90, 30, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,  20,-30, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,  20,-30,-90,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30, -90, 30,-90,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, -90, 30, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,  20,-30, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  20,-30,-90,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(-50,-50,-40,-50,QPen(Qt::darkBlue,2)));  // EN
-  Lines.append(new Line(-50,-30,-30,-30,QPen(Qt::darkBlue,2)));  // A
-  Lines.append(new Line(-50,-10,-30,-10,QPen(Qt::darkBlue,2)));  // B
-  Lines.append(new Line( 30, 10, 50, 10,QPen(Qt::darkBlue,2)));  // Y3
-  Lines.append(new Line( 30,-10, 50,-10,QPen(Qt::darkBlue,2)));  // Y2
-  Lines.append(new Line( 30,-30, 50,-30,QPen(Qt::darkBlue,2)));  // Y1
-  Lines.append(new Line( 30,-50, 50,-50,QPen(Qt::darkBlue,2)));  // Y0
+  Lines.append(new Line(-50,-50,-40,-50,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // EN
+  Lines.append(new Line(-50,-30,-30,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // A
+  Lines.append(new Line(-50,-10,-30,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // B
+  Lines.append(new Line( 30, 10, 50, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // Y3
+  Lines.append(new Line( 30,-10, 50,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // Y2
+  Lines.append(new Line( 30,-30, 50,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // Y1
+  Lines.append(new Line( 30,-50, 50,-50,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));  // Y0
 
-  Arcs.append(new Arc( -40, -55, 10, 10, 0, 16*360, QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc( -40, -55, 10, 10, 0, 16*360, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
  
   Texts.append(new Text(-25,-85, "DMUX", Qt::darkBlue, 12.0));
 
@@ -87,7 +87,7 @@ void dmux2to4::createSymbol()
   Texts.append(new Text( 15,-23, "2", Qt::darkBlue, 12.0));
   Texts.append(new Text( 15, -3, "3", Qt::darkBlue, 12.0));
 
-  Lines.append(new Line(0, -18, 12, -18, QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(0, -18, 12, -18, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port(-50,-50));  // En
   Ports.append(new Port(-50,-30));  // A

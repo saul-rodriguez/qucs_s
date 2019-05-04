@@ -25,13 +25,13 @@ Relais::Relais()
 {
   Description = QObject::tr("relay");
 
-  Lines.append(new Line(-30,-30,-30, -8,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,  8,-30, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-45, -8,-15, -8,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-45,  8,-15,  8,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-45, -8,-45,  8,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-15, -8,-15,  8,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-45,  8,-15, -8,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,-30,-30, -8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  8,-30, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-45, -8,-15, -8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-45,  8,-15,  8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-45, -8,-45,  8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-15, -8,-15,  8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-45,  8,-15, -8,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Lines.append(new Line(-43, -3,-37, -3,QPen(Qt::red,1)));
   Lines.append(new Line(-40, -6,-40,  0,QPen(Qt::red,1)));
@@ -39,11 +39,11 @@ Relais::Relais()
 
   Lines.append(new Line(-15,  0, 35,  0,QPen(Qt::darkBlue,1,Qt::DotLine)));
 
-  Lines.append(new Line( 30,-30, 30,-18,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, 15, 30, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, 15, 45,-15,QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc( 27,-18, 5, 5, 0, 16*360,QPen(Qt::darkBlue,2)));
-  Ellips.append(new Area( 27, 12, 6, 6, QPen(Qt::darkBlue,2),
+  Lines.append(new Line( 30,-30, 30,-18,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 15, 30, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 15, 45,-15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc( 27,-18, 5, 5, 0, 16*360,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Ellips.append(new Area( 27, 12, 6, 6, QPen(gCustomPref.componentColor,gCustomPref.componentThickness),
                          QBrush(Qt::darkBlue, Qt::SolidPattern)));
 
   Ports.append(new Port(-30,-30));

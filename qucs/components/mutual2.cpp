@@ -34,27 +34,27 @@ Mutual2::Mutual2()
   int w;
   QString stmp;
 
-  Arcs.append(new Arc(-16,-58,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16,-46,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16,-34,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16, 46,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16, 34,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(-16, 22,12,12, 16*270,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4,-18,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4, -6,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Arcs.append(new Arc(  4,  6,12,12,  16*90,16*180, QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-58,-10,-70,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-70,-30,-70,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10,-18, 10,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10,-30, 30,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 58,-10, 70,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 70,-30, 70,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10, 18, 10, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 10, 30, 30, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-10,-30,-10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,-22,-10,-10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 10,-30, 10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, 10,-10, 22,QPen(Qt::darkBlue,2)));
+  Arcs.append(new Arc(-16,-58,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16,-46,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16,-34,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16, 46,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16, 34,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(-16, 22,12,12, 16*270,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4,-18,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4, -6,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Arcs.append(new Arc(  4,  6,12,12,  16*90,16*180, QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-58,-10,-70,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-70,-30,-70,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10,-18, 10,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10,-30, 30,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 58,-10, 70,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 70,-30, 70,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10, 18, 10, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 10, 30, 30, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-10,-30,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,-22,-10,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 10,-30, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, 10,-10, 22,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   stmp = "1"; w = smallmetrics.width(stmp); // compute width to right-align
   Texts.append(new Text(-13-w,-61,stmp));

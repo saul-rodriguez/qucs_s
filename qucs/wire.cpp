@@ -114,7 +114,7 @@ void Wire::paint(ViewPainter *p)
     p->drawLine(x1, y1, x2, y2);
   }
   else {
-    p->Painter->setPen(QPen(Qt::darkBlue,2));
+    p->Painter->setPen(QPen(gCustomPref.wireColor,gCustomPref.wireThickness));
     p->drawLine(x1, y1, x2, y2);
   }
 }

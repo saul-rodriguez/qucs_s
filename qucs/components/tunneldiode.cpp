@@ -53,13 +53,13 @@ TunnelDiode::TunnelDiode()
   Props.append(new Property("Area", "1.0", false,
 	QObject::tr("default area for diode")));
 
-  Lines.append(new Line(-30,  0,-12,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 12,  0, 30,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-12, -9,-12,  9,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, -9,  0,  9,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 12, -9, 12,  9,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-12, -9, 12,  9,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-12,  9, 12, -9,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,  0,-12,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 12,  0, 30,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-12, -9,-12,  9,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, -9,  0,  9,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 12, -9, 12,  9,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-12, -9, 12,  9,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-12,  9, 12, -9,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port(-30, 0));
   Ports.append(new Port( 30, 0));

@@ -22,8 +22,8 @@ BondWire::BondWire()
 {
   Description = QObject::tr("bond wire");
 
-  Lines.append(new Line(-30, 0,-8, 0,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line( 30, 0, 8, 0,QPen(Qt::darkBlue,3)));
+  Lines.append(new Line(-30, 0,-8, 0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 0, 8, 0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Arcs.append(new Arc(-11,-10, 22, 26, 16*30,16*120,QPen(Qt::darkBlue,1)));
   Arcs.append(new Arc(-19,-13, 10, 13,16*205,16*130,QPen(Qt::darkBlue,1)));

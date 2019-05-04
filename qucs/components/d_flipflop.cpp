@@ -25,15 +25,15 @@ D_FlipFlop::D_FlipFlop()
 
   Props.append(new Property("t", "0", false, QObject::tr("delay time")));
 
-  Lines.append(new Line(-20,-20, 20,-20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-20, 20, 20, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-20,-20,-20, 20,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 20,-20, 20, 20,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-20,-20, 20,-20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-20, 20, 20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-20,-20,-20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 20,-20, 20, 20,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(-30,-10,-20,-10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30, 10,-20, 10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,-10, 20,-10,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 20,  0, 30,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,-10,-20,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30, 10,-20, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,-10, 20,-10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 20,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Texts.append(new Text(-18,-21, "D", Qt::darkBlue, 12.0));
   Texts.append(new Text(  6,-21, "Q", Qt::darkBlue, 12.0));

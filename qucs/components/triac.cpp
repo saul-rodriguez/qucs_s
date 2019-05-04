@@ -22,18 +22,18 @@ Triac::Triac()
 {
   Description = QObject::tr("triac (bidirectional thyristor)");
 
-  Lines.append(new Line(  0,-30,  0, -6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 30,  0,  6,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(  0,-30,  0, -6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 30,  0,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(-18,  6, 18,  6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-18, -6, 18, -6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -9,  6,-18, -6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -9,  6,  0, -6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  9, -6,  0,  6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  9, -6, 18,  6,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-18,  6, 18,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-18, -6, 18, -6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -9,  6,-18, -6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -9,  6,  0, -6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  9, -6,  0,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  9, -6, 18,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(-13, 10, -9,  6,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30, 10,-13, 10,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-13, 10, -9,  6,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30, 10,-13, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Ports.append(new Port(  0,-30));
   Ports.append(new Port(  0, 30));

@@ -34,6 +34,8 @@
 #include "diagrams/diagram.h"
 #include "paintings/painting.h"
 #include "components/component.h"
+#include "custompreferences.h"
+
 
 #include <Q3ScrollView>
 #include <Q3PtrList>

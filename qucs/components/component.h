@@ -21,6 +21,7 @@
 #include <Q3PtrList>
 
 #include "element.h"
+#include "custompreferences.h"
 
 class Schematic;
 class ViewPainter;

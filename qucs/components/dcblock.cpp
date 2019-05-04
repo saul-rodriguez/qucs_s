@@ -21,10 +21,10 @@ dcBlock::dcBlock()
 {
   Description = QObject::tr("dc block");
 
-  Lines.append(new Line(- 4,-11, -4, 11,QPen(Qt::darkBlue,4)));
-  Lines.append(new Line(  4,-11,  4, 11,QPen(Qt::darkBlue,4)));
-  Lines.append(new Line(-30,  0, -4,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  4,  0, 30,  0,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(- 4,-11, -4, 11,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  4,-11,  4, 11,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0, -4,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  4,  0, 30,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Lines.append(new Line(-23,-14, 23,-14,QPen(Qt::darkBlue,1)));
   Lines.append(new Line(-23, 14, 23, 14,QPen(Qt::darkBlue,1)));

@@ -93,20 +93,20 @@ Element* BJT::info_pnp(QString& Name, char* &BitmapFile, bool getNewOne)
 // -------------------------------------------------------
 void BJT::createSymbol()
 {
-  Lines.append(new Line(-10,-15,-10, 15,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-30,  0,-10,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, -5,  0,-15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,-15,  0,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,  5,  0, 15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 15,  0, 30,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-10,-15,-10, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-10,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, -5,  0,-15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,-15,  0,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,  5,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 15,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   if(Props.getFirst()->Value == "npn") {
-    Lines.append(new Line( -6, 15,  0, 15,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line(  0,  9,  0, 15,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line( -6, 15,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line(  0,  9,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   }
   else {
-    Lines.append(new Line( -5, 10, -5, 16,QPen(Qt::darkBlue,2)));
-    Lines.append(new Line( -5, 10,  1, 10,QPen(Qt::darkBlue,2)));
+    Lines.append(new Line( -5, 10, -5, 16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+    Lines.append(new Line( -5, 10,  1, 10,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   }
 
   Ports.append(new Port(-30,  0));

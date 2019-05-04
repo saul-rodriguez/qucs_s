@@ -25,8 +25,8 @@ TLine_4Port::TLine_4Port()
   Arcs.append(new Arc(-28,-40, 18, 38,16*232, 16*33,QPen(Qt::darkBlue,1)));
   Arcs.append(new Arc(-28,  2, 18, 38, 16*95, 16*33,QPen(Qt::darkBlue,1)));
 
-  Lines.append(new Line(-20,-2, 20,-2,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-20, 2, 20, 2,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-20,-2, 20,-2,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-20, 2, 20, 2,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Arcs.append(new Arc( 10,-40, 18, 38,16*270, 16*40,QPen(Qt::darkBlue,1)));
   Arcs.append(new Arc( 10,  2, 18, 38, 16*50, 16*40,QPen(Qt::darkBlue,1)));

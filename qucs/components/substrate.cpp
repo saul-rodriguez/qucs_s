@@ -22,20 +22,20 @@ Substrate::Substrate()
 {
   Description = QObject::tr("substrate definition");
 
-  Lines.append(new Line(-30,-16, 30,-16,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,-12, 30,-12,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30, 16, 30, 16,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30, 12, 30, 12,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-30,-16,-30, 16,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,-16, 30, 16,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,-16, 30,-16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,-12, 30,-12,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30, 16, 30, 16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30, 12, 30, 12,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,-16,-30, 16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,-16, 30, 16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
-  Lines.append(new Line(-30,-16, 16,-40,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,-16, 80,-40,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30,-12, 80,-36,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, 12, 80,-16,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 30, 16, 80,-12,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 16,-40, 80,-40,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( 80,-40, 80,-12,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-30,-16, 16,-40,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,-16, 80,-40,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30,-12, 80,-36,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 12, 80,-16,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 30, 16, 80,-12,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 16,-40, 80,-40,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( 80,-40, 80,-12,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
   
   Lines.append(new Line(-30,  0,-18,-12,QPen(Qt::darkBlue,1)));
   Lines.append(new Line(-22, 12,  2,-12,QPen(Qt::darkBlue,1)));

@@ -80,6 +80,8 @@
 #include "extsimkernels/simsettingsdialog.h"
 #include "extsimkernels/codemodelgen.h"
 
+#include "custompreferences.h"
+
 // icon for unsaved files (diskette)
 const char *smallsave_xpm[] = {
 "16 17 66 1", " 	c None",
@@ -201,6 +203,9 @@ QucsApp::QucsApp()
                                          "and simple press Apply button"));
       slotSimSettings();
   }
+
+  //Custom Preferences
+  gCustomPref.setCadence();
 }
 
 QucsApp::~QucsApp()

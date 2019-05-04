@@ -40,6 +40,8 @@
 #include <QPen>
 #include <QBrush>
 
+#include "custompreferences.h"
+
 class Node;
 class QPainter;
 class WireLabel;

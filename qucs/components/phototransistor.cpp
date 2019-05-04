@@ -117,14 +117,14 @@ Element * phototransistor::info(QString& Name, char * &BitmapFile, bool getNewOn
 void phototransistor::createSymbol()
 {
   Arcs.append(new Arc(-25,-20, 40, 40,  0,16*360,QPen(Qt::red,2)));
-  Lines.append(new Line(-10,-15,-10, 15,QPen(Qt::darkBlue,3)));
-  Lines.append(new Line(-30,  0,-10,  0,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10, -5,  0,-15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,-15,  0,-30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(-10,  5,  0, 15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0, 15,  0, 30,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line( -6, 15,  0, 15,QPen(Qt::darkBlue,2)));
-  Lines.append(new Line(  0,  9,  0, 15,QPen(Qt::darkBlue,2)));
+  Lines.append(new Line(-10,-15,-10, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-30,  0,-10,  0,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10, -5,  0,-15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,-15,  0,-30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(-10,  5,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0, 15,  0, 30,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line( -6, 15,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
+  Lines.append(new Line(  0,  9,  0, 15,QPen(gCustomPref.componentColor,gCustomPref.componentThickness)));
 
   Lines.append(new Line(-50, -50, -40, -50,QPen(Qt::green,2)));
   Lines.append(new Line(-40, -50, -40, -30,QPen(Qt::green,2)));
