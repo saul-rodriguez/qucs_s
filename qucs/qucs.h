@@ -190,6 +190,8 @@ public:
 
   QAction *activeAction;    // pointer to the action selected by the user
 
+  QAction *viewColors;
+
 private:
 // ********* Widgets on the main area **********************************
   QDockWidget     *dock;
@@ -367,6 +369,7 @@ public slots:
   void slotOpenRecent();
   void slotSaveDiagramToGraphicsFile();
   void slotSaveSchematicToGraphicsFile(bool diagram = false);
+  void slotViewColors();
 
 private slots:
   void slotCursorLeft(bool left=true);

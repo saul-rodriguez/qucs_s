@@ -24,6 +24,7 @@ public:
 
     void loadCustomProperties();
     void setCadence();
+    void setQUCSdefault();
 };
 
 extern CustomPreferences gCustomPref;

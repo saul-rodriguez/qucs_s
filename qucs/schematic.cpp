@@ -405,8 +405,18 @@ void Schematic::drawContents(QPainter *p, int, int, int, int)
   if(!symbolMode)
     paintFrame(&Painter);
 
-  for(Component *pc = Components->first(); pc != 0; pc = Components->next())
+  for(Component *pc = Components->first(); pc != 0; pc = Components->next()) {
+
+      for ( int i=0; i < pc->Lines.count(); i++) {
+          pc->Lines[i]->style = gCustomPref.componentColor;
+      }
+
+      for ( int i=0; i < pc->Arcs.count(); i++) {
+          pc->Arcs[i]->style = gCustomPref.componentColor;
+      }
     pc->paint(&Painter);
+  }
+
 
   for(Wire *pw = Wires->first(); pw != 0; pw = Wires->next()) {
     pw->paint(&Painter);

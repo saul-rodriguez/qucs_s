@@ -671,6 +671,12 @@ void QucsApp::initActions()
   helpAboutQt->setStatusTip(tr("About Qt"));
   helpAboutQt->setWhatsThis(tr("About Qt\n\nAbout Qt by Trolltech"));
   connect(helpAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+  viewColors = new QAction(tr("Change to VLSI/QUCS default color"), this);
+  viewColors->setStatusTip(tr("Change colors"));
+  //viewColors->setWhatsThis(tr(""));
+  connect(viewColors, SIGNAL(triggered()), SLOT(slotViewColors()));
+
 }
 
 // ----------------------------------------------------------
@@ -819,6 +825,7 @@ void QucsApp::initMenuBar()
   viewMenu->addAction(viewStatusBar);
   viewMenu->addAction(viewBrowseDock);
   viewMenu->addAction(viewOctaveDock);
+  viewMenu->addAction(viewColors);
 
 
   helpMenu = new QMenu(tr("&Help"));  // menuBar entry helpMenu

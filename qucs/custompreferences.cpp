@@ -4,24 +4,12 @@ CustomPreferences gCustomPref;
 
 CustomPreferences::CustomPreferences()
 {
-    //Default QUCS values
-    gridColor = Qt::black;
-
-    componentColor = Qt::darkBlue;
-    componentName = Qt::black;
-    componentValue = Qt::black;
-    componentThickness = 2;
-
-    portColor = Qt::darkBlue;
-    portShape = "arc";
-
-    wireColor = Qt::darkBlue;
-    wireThickness = 2;
+   setQUCSdefault();
 }
 
 void CustomPreferences::loadCustomProperties()
 {
-
+  //TODO: read user defined colors
 }
 
 void CustomPreferences::setCadence()
@@ -43,4 +31,21 @@ void CustomPreferences::setCadence()
 
     wireColor = QColor(0x38befe);
     wireThickness = 1;
+}
+
+void CustomPreferences::setQUCSdefault()
+{
+    //Default QUCS values
+    gridColor = Qt::black;
+
+    componentColor = Qt::darkBlue;
+    componentName = Qt::black;
+    componentValue = Qt::black;
+    componentThickness = 2;
+
+    portColor = Qt::red;
+    portShape = "arc";
+
+    wireColor = Qt::darkBlue;
+    wireThickness = 2;
 }

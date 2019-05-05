@@ -205,7 +205,7 @@ QucsApp::QucsApp()
   }
 
   //Custom Preferences
-  gCustomPref.setCadence();
+  //gCustomPref.setCadence();
 }
 
 QucsApp::~QucsApp()
@@ -2878,6 +2878,39 @@ void QucsApp::slotSaveSchematicToGraphicsFile(bool diagram)
     statusBar()->showMessage(QObject::tr("Successfully exported"), 2000);
   }
   delete writer;
+}
+
+void QucsApp::slotViewColors()
+{
+    //qDebug()<<"slo"
+    QColor aux;
+    if (!gCustomPref.portShape.compare("arc")) {
+        gCustomPref.setCadence();
+        aux = Qt::black;
+    } else {
+        gCustomPref.setQUCSdefault();
+        aux = QucsSettings.BGColor;
+    }
+
+    int No=0;
+    QWidget *w;
+
+    while((w=DocumentTab->widget(No++)) != 0) {
+      QWidget *vp;
+      if(isTextDocument(w)) {
+        vp = ((TextDoc*)w)->viewport();
+      } else {
+        vp = ((Schematic*)w)->viewport();
+      }
+      QPalette p = vp->palette();
+      p.setColor(vp->backgroundRole(), aux);
+      vp->setPalette(p);
+    }
+
+    readProjects();
+    slotUpdateTreeview();
+    repaint();
+
 }
 
 
